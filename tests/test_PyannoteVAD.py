@@ -30,7 +30,7 @@ class TestPyannoteVAD(unittest.TestCase):
         input_column = 'input_audio'
         output_dir = '/output'
 
-        new_p_df = self.vad.process_item(f, p_df, processed_path, input_column, output_dir)
+        new_p_df = self.vad.process_item(f, processed_path, input_column, output_dir)
 
         self.assertEqual(len(new_p_df), 2)  # two segments should be added
         self.assertEqual(new_p_df.loc[0, processed_path], f'{output_dir}/test_audio_0.wav')  # Update with expected value
