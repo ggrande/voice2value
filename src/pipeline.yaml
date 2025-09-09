@@ -1,9 +1,10 @@
-input_dir: 'speech_examples_small' 
+input_dir: 'speech_examples'
 segment_name_separator: "_"
 intermediate_payload_path: 'results'
 # device: 'cpu'  # 'cpu'/'cuda'
 max_workers: 4  # set the number of workers for parallel threads
 sampling_rate: 16000
+huggingface_ACCESS_TOKEN: ""
 latent_logger:
   enabled: false
   log_each_x_records: 1000
@@ -52,6 +53,7 @@ preprocessing:
     overwrite: false
     save_payload: true
   pyannote_sd:  # pyannote speaker diarization, applies VAD and Embedding
+    huggingface_ACCESS_TOKEN: '{{huggingface_ACCESS_TOKEN}}'
     output_dir: 'pyannote_sd_preprocessed'
     classification_column_name: 'pyannote_diarization_classification'
     add_segment_metadata: true

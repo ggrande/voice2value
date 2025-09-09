@@ -1,0 +1,11 @@
+{
+  "name": "voice2value",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/ffmpeg:1": {}
+  },
+  "postCreateCommand": "pip install -e .[pyannote,librosa,speechbrain_embedding,cpu]",
+  "containerEnv": {
+    "HUGGINGFACE_ACCESS_TOKEN": "${{ secrets.hf }}"
+  }
+}

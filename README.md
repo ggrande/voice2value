@@ -96,6 +96,20 @@ huggingface_ACCESS_TOKEN=<your_token>
 ```
 3. Pipelines examples are available in `src/run.py`.
 
+## Run in GitHub Codespaces
+
+This repository includes a dev container configuration. After opening the
+project in a Codespace and placing your audio snippets in `src/speech_examples/`,
+run the entire pipeline with a single command:
+
+```bash
+make run
+```
+
+The command merges all audio files in `src/speech_examples` into a single
+`merged.wav` and then executes `src/run.py`. Authentication for HuggingFace
+models is taken from the `hf` Codespaces secret.
+
 ## Installation with uv (usage)
 
 Please see [the minimal example repository](https://github.com/griko/vanpy-minimal-usage) for a quick start.
